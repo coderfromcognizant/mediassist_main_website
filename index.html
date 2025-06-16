@@ -343,7 +343,7 @@
                     "Medical coverage (Part B)",
                     "Preventive services"
                 ],
-                id: "medicare-basic"
+                id: "1001"
             },
             "medicare-plus": {
                 price: "",
@@ -354,7 +354,7 @@
                     "Routine vision exams",
                     "Annual wellness exam"
                 ],
-                id: "medicare-plus"
+                id: "1002"
             },
             "care-essentials": {
                 price: "",
@@ -365,7 +365,7 @@
                     "Hearing aid benefits",
                     "Wellness program membership"
                 ],
-                id: "care-essentials"
+                id: "1003"
             }
         };
 
@@ -404,6 +404,7 @@
             document.getElementById("user-name").textContent = "";
             document.getElementById("login-btn").style.display = "inline-block";
             document.getElementById("logout-btn").style.display = "none";
+            sendEvent('loggedOut');
             updateDataLayerView();
         }
 
@@ -493,7 +494,6 @@
             }
 
             sendEvent("requestQuote");
-
             updateDataLayerView();
             alert("Quote Submitted Successfully!");
             closeQuoteModal();
