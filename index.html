@@ -68,12 +68,12 @@
 
         function sendEvent(eventName) {
             const customEvent = new CustomEvent(eventName);
+            console.log(customEvent);
             document.body.dispatchEvent(customEvent);
         }
     </script>
     <!-- Adobe Launch -->
-    <script src="https://assets.adobedtm.com/236ca7d75265/e6152241d220/launch-d673bb9c9e9b-development.min.js"
-        async></script>
+    <script src="https://assets.adobedtm.com/236ca7d75265/e6152241d220/launch-d673bb9c9e9b-development.min.js" async></script>
 </head>
 
 <body>
@@ -303,7 +303,10 @@
             "nina@example.com": "nina123",
             "henry@example.com": "henry123",
             "emma@example.com": "emma123",
-            "susan@example.com": "susan123"
+            "susan@example.com": "susan123",
+            "gitanshugupta77@gmail.com": "gita123",
+            "gitanshuartanddesign@gmail.com": "gita123",
+            "ravijna.r@cognizant.com": "ravi123"
         };
 
 
@@ -317,7 +320,10 @@
             "nina@example.com": { name: "Nina Patel", state: "NM" },
             "henry@example.com": { name: "Henry Chen", state: "OK" },
             "emma@example.com": { name: "Emma Lopez", state: "TX" },
-            "susan@example.com": { name: "Susan White", state: "TX" }
+            "susan@example.com": { name: "Susan White", state: "TX" },
+            "gitanshugupta77@gmail.com": {name: "Gitanshu Gupta", state: "OK"},
+            "gitanshuartanddesign@gmail.com": {name: "Gitanshu Designer", state: "TX"},
+            "ravijna.r@cognizant.com": {name: "Ravijna R", state: "NM"}
         };
 
         // Plans by state
