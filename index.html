@@ -325,6 +325,7 @@
             "medicare-basic": {
                 price: "",
                 name: "Medicare Basic",
+                eventType: "medicare.basic",
                 features: [
                     "Hospital coverage (Part A)",
                     "Medical coverage (Part B)",
@@ -335,6 +336,7 @@
             "medicare-plus": {
                 price: "",
                 name: "Medicare Plus",
+                eventType: "medicare.plus",
                 features: [
                     "All Basic benefits",
                     "Prescription drug coverage (Part D)",
@@ -346,6 +348,7 @@
             "care-essentials": {
                 price: "",
                 name: "Care Essentials",
+                eventType: "care.essentials",
                 features: [
                     "All Plus benefits",
                     "Comprehensive dental coverage",
@@ -424,6 +427,8 @@
         // Modal handlers
         function openQuoteModal(plan) {
             document.getElementById("policy-name").value = planDetails[plan].name;
+            digitalData.event.eventType = planDetails[plan].eventType;
+            sendEvent("planOpened");
             document.getElementById("quote-modal").style.display = "flex";
         }
 
