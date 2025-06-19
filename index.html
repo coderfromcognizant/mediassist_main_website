@@ -191,7 +191,9 @@
                 <div class="form-group"><label>Communication</label>
                     <div class="checkbox-group"><label><input type="checkbox" id="chan-email" />
                             Email</label><label><input type="checkbox" id="chan-sms" /> SMS</label></div>
+                    
                 </div>
+                <p class="form-group full-width">By clicking the checkbox you agree to receive marketing emails.</p>
                 <div class="form-group full-width"><button class="btn btn-primary btn-block" id="submit-quote-button"
                         onclick="submitQuoteForm()">Submit</button></div>
             </div>
@@ -370,7 +372,7 @@
                 document.getElementById("user-name").textContent = info.name;
                 document.getElementById("login-btn").style.display = "none";
                 document.getElementById("logout-btn").style.display = "inline-block";
-                sendEvent('loggedIn');
+                sendEvent('login.complete');
                 updateDataLayerView();
                 closeLoginModal();
             } else {
@@ -389,7 +391,7 @@
             document.getElementById("user-name").textContent = "";
             document.getElementById("login-btn").style.display = "inline-block";
             document.getElementById("logout-btn").style.display = "none";
-            sendEvent('loggedOut');
+            sendEvent('logout.complete');
             updateDataLayerView();
         }
 
@@ -478,7 +480,7 @@
                 familySize
             }
 
-            sendEvent("requestQuote");
+            sendEvent("request.quote");
             updateDataLayerView();
             alert("Quote Submitted Successfully!");
             closeQuoteModal();
