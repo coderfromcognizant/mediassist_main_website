@@ -69,7 +69,6 @@
 
         function sendEvent(eventName) {
             const customEvent = new CustomEvent(eventName);
-            console.log(customEvent);
             document.body.dispatchEvent(customEvent);
         }
     </script>
@@ -375,6 +374,7 @@
                 document.getElementById("user-name").textContent = info.name;
                 document.getElementById("login-btn").style.display = "none";
                 document.getElementById("logout-btn").style.display = "inline-block";
+                digitalData.event.eventType = "login.complete";
                 sendEvent('login.complete');
                 updateDataLayerView();
                 closeLoginModal();
@@ -394,6 +394,7 @@
             document.getElementById("user-name").textContent = "";
             document.getElementById("login-btn").style.display = "inline-block";
             document.getElementById("logout-btn").style.display = "none";
+            digitalData.event.eventType = "logout.complete";
             sendEvent('logout.complete');
             updateDataLayerView();
         }
@@ -475,7 +476,7 @@
             }
 
             digitalData.page.pageInfo.pageName = "medi-assist:requestQuote";
-
+            digitalData.event.eventType = "request.quote";
             digitalData.user[0].profile[0].attributes.email = email;
             digitalData.user[0].profile[0].attributes.phone = phone;
             digitalData.user[0].profile[0].attributes.channel = channel;
@@ -484,7 +485,6 @@
                 zipCode,
                 familySize
             }
-
             sendEvent("request.quote");
             updateDataLayerView();
             alert("Quote Submitted Successfully!");
