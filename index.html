@@ -309,7 +309,8 @@
             "harshita.pandey@cognizant.com": {name: "Harshita", state:"NM"},
             "payal.chandel@cognizant.com": {name: "Payal", state:"TX"},
             "prakhar.raj@cognizant.com": {name: "Prakhar", state:"TX"},
-            "ravijna.r@cognizant.com": {name: "Ravijna R", state: "NM"}
+            "ravijna.r@cognizant.com": {name: "Ravijna R", state: "NM"},
+            "vijay.j3@cognizant.com": {name: "Vijay J", state: "TX"},
         };
 
         // Plans by state
@@ -371,7 +372,7 @@
                     email,
                     loggedIn: true
                 };
-                document.getElementById("user-name").textContent = info.name;
+                document.getElementById("user-name").textContent = info.name; 
                 document.getElementById("login-btn").style.display = "none";
                 document.getElementById("logout-btn").style.display = "inline-block";
                 digitalData.event.eventType = "login.complete";
